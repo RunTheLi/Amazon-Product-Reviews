@@ -1,0 +1,107 @@
+# Explainable AI: Amazon Product Reviews Sentiment Analysis (LIME vs SHAP)
+
+## Project Overview
+
+This project is a **Sentiment Analysis system** built using Machine Learning to classify Amazon product reviews into:
+
+- Positive sentiment
+- Negative sentiment
+
+In addition, the project focuses on **Explainable AI (XAI)** using:
+- LIME (Local Interpretable Model-agnostic Explanations)
+- SHAP (SHapley Additive exPlanations)
+
+to explain why the model makes a specific prediction.
+
+---
+
+## Dataset
+
+We use the **Amazon Product Reviews Dataset** containing:
+
+- `Text` → customer review text
+- `Score` → rating (1–5 stars)
+
+### Label conversion:
+- 4–5 stars → Positive (1)
+- 1–3 stars → Negative (0)
+
+---
+
+## Machine Learning Pipeline
+
+### 1. Data Preprocessing
+- Remove null values
+- Select relevant columns
+- Convert rating into sentiment labels
+
+### 2. Feature Extraction
+- TF-IDF Vectorization
+- Limit vocabulary to 5000 features
+
+### 3. Model Training
+- Logistic Regression classifier
+- Train/test split (80/20)
+
+---
+
+## Model Performance
+
+The model is evaluated using:
+
+- Accuracy
+- Precision
+- Recall
+- F1-score
+
+---
+
+## Explainable AI
+
+### LIME (Local Explanation)
+
+LIME explains individual predictions by showing which words influenced the model decision.
+
+Example:
+- "best", "satisfied" → positive influence
+- "gluten", "bad" → negative influence
+
+=> Output is visualized using bar charts.
+
+---
+
+### SHAP (Global + Local Explanation)
+
+SHAP uses game theory (Shapley values) to measure feature importance.
+
+It provides:
+- Global feature importance (overall model behavior)
+- Local explanation (per prediction)
+
+Visualization:
+- Bar plot (feature importance)
+- Beeswarm plot (distribution of impact)
+
+---
+
+## LIME vs SHAP Comparison
+
+| Feature | LIME | SHAP |
+|----------|------|------|
+| Scope | Local explanations | Local + Global explanations |
+| Speed | Fast | Slower |
+| Stability | May vary | Consistent |
+| Method | Approximation | Game theory (Shapley values) |
+
+---
+
+## Workflow
+Text Review
+↓
+TF-IDF Vectorization
+↓
+Logistic Regression Model
+↓
+Prediction (Positive / Negative)
+↓
+Explainability (LIME + SHAP)
