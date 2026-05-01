@@ -72,6 +72,6 @@ ML & NLP Explainability Project
 
 ## Kaggle source
 
-- File = Review.csv
+- File = Review.csv (286.97 MB)
 
 - https://www.kaggle.com/datasets/arhamrumi/amazon-product-reviews
