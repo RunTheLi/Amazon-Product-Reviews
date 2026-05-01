@@ -67,8 +67,6 @@ To build a machine learning model that not only predicts sentiment but also expl
 
 ---
 
-## Author
-
 ML & NLP Explainability Project
 
 
